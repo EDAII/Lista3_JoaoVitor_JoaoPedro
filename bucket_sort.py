@@ -28,10 +28,3 @@ def insertion_sort(alist):
             alist[j + 1] = alist[j]
             j = j - 1
         alist[j + 1] = temp
- 
- 
-alist = input('Enter the list of (nonnegative) numbers: ').split()
-alist = [int(x) for x in alist]
-sorted_list = bucket_sort(alist)
-print('Sorted list: ', end='')
-print(sorted_list)
