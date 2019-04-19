@@ -3,6 +3,7 @@ import os
 from merge_sort import merge_sort
 from bucket_sort import bucket_sort
 from quick_sort import quick_sort
+from heapsort import heap_sort
 from utils import insere_randomico
 from gera_relatorio import gera_csv_resultado, plot_grafico
 import time
@@ -32,9 +33,11 @@ if __name__ == '__main__':
     tempo_ordenacao_python = {'bucket_sort': {1000: 0, 2000: 0,
                   3000: 0, 4000: 0, 5000: 0, 6000: 0,
                   7000: 0, 8000: 0, 9000: 0, 10000: 0},
-                  'merge_sort':{}, 'quick_sort': {} }
+                  'merge_sort':{}, 'quick_sort': {}, 'heap_sort': {} }
     tempo_ordenacao_python['merge_sort'].update(tempo_ordenacao_python['bucket_sort'])
     tempo_ordenacao_python['quick_sort'].update(tempo_ordenacao_python['bucket_sort'])
+    tempo_ordenacao_python['heap_sort'].update(tempo_ordenacao_python['bucket_sort'])
+
     tamanho_vetor = 1000    
 
     while loop:
@@ -46,6 +49,7 @@ if __name__ == '__main__':
             seleciona_algoritmo(merge_sort, lista, tempo_ordenacao_python, 'merge_sort')
             seleciona_algoritmo(quick_sort, lista, tempo_ordenacao_python, 'quick_sort')
             seleciona_algoritmo(bucket_sort, lista, tempo_ordenacao_python, 'bucket_sort')
+            seleciona_algoritmo(heap_sort, lista, tempo_ordenacao_python, 'heap_sort')
             print(tempo_ordenacao_python)
             plot_grafico(tempo_ordenacao_python)
         elif choice=='2':
@@ -54,6 +58,7 @@ if __name__ == '__main__':
             seleciona_algoritmo(merge_sort, lista, tempo_ordenacao_python, 'merge_sort')
             seleciona_algoritmo(quick_sort, lista, tempo_ordenacao_python, 'quick_sort')
             seleciona_algoritmo(bucket_sort, lista, tempo_ordenacao_python, 'bucket_sort')
+            seleciona_algoritmo(heap_sort, lista, tempo_ordenacao_python, 'heap_sort')
             gera_csv_resultado(tempo_ordenacao_python)
         elif choice=='3':
             print("Opcao 3 foi escolhida")
