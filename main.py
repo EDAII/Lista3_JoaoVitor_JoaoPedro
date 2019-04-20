@@ -13,7 +13,7 @@ import pandas as pd
 
 def print_menu():
     print(30 * "-" , "MENU" , 30 * "-")
-    print("1. Comparacao bucket sort, merge sort, e quick sort")
+    print("1. Comparacao bucket sort, merge sort, heap sort e quick sort")
     print("2. Gera csv com relatório dos tempos de ordenação dos algoritmos")
     print("3. Sair")
     print(67 * "-")
@@ -50,7 +50,6 @@ if __name__ == '__main__':
             seleciona_algoritmo(quick_sort, lista, tempo_ordenacao_python, 'quick_sort')
             seleciona_algoritmo(bucket_sort, lista, tempo_ordenacao_python, 'bucket_sort')
             seleciona_algoritmo(heap_sort, lista, tempo_ordenacao_python, 'heap_sort')
-            print(tempo_ordenacao_python)
             plot_grafico(tempo_ordenacao_python)
         elif choice=='2':
             print("Opcao 1 foi escolhida")
